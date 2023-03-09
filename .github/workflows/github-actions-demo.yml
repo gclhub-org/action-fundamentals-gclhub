@@ -12,19 +12,21 @@ on:
   schedule:
     - cron: '15 6 * * 0'
   workflow_dispatch:
-  
+
 jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
       - name: Output name and type of event
-      - run: echo "event name is:" ${{ github.event_name }} 
-      - run: echo "event type is:" ${{ github.event.action }} 
+      - run: |
+          echo "event name is:" ${{ github.event_name }} 
+          echo "event type is:" ${{ github.event.action }} 
       
       - name: Output the name of the branch
       - run: echo "branch name is:" ${{ github.ref_name }}
       
       - name: List the files in the repository
       - uses: actions/checkout@v3
-      - run: echo "The list of repository files is:"
-      - run: ls -laR
+      - run: |
+          echo "The list of repository files is:"
+          ls -laR
