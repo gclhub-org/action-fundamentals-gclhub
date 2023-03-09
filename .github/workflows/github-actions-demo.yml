@@ -31,4 +31,4 @@ jobs:
       - name: List the files in the repository
         run: |
           echo "The list of repository files is:"
-          ls -laR
+          tree
