@@ -18,17 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output name and type of event
-      - run: |
+        run: |
           echo "event name is:" ${{ github.event_name }} 
           echo "event type is:" ${{ github.event.action }} 
       
       - name: Output the name of the branch
-      - run: echo "branch name is:" ${{ github.ref_name }}
+        run: echo "branch name is:" ${{ github.ref_name }}
       
       - name: Checkout the repository
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       
       - name: List the files in the repository
-      - run: |
+        run: |
           echo "The list of repository files is:"
           ls -laR
